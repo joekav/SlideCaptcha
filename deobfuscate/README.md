@@ -10,7 +10,8 @@ If you are using npm, run the following command:
 ```npm install```
 
 
-## Running the deobfuscator
+
+## Running deobfuscator
 
 Insert the captcha script found on the Datadome captcha block page to `/assets/in.js`.
 
