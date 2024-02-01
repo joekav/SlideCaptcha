@@ -7,7 +7,7 @@ This section of the repository focuses on the deobfuscation of the slide captcha
 
 If you are using npm, run the following command:
 
-``npm install``
+```npm install```
 
 
 ## Running the deobfuscator
