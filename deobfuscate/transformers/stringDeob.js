@@ -44,6 +44,7 @@ function stringDeobfuscation(ast) {
                 }
             },
         },
+        // Very hacky, `wn` can change at any point
         VariableDeclarator(path) {
             const currentContextKey = contextStack[contextStack.length - 1];
 
