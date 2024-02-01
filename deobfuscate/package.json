@@ -1,0 +1,24 @@
+{
+  "name": "captcha_deob",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/generator": "^7.23.6",
+    "@babel/parser": "^7.23.6",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/traverse": "^7.23.7",
+    "fs": "^0.0.1-security",
+    "vm": "^0.1.0"
+  },
+  "babel": {
+    
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-literals": "^7.23.3"
+  }
+}
