@@ -4,32 +4,32 @@ function randNum(min = 0, max = 100, round = false) {
     return rand + min;
 }
 
-function generateLinearMouseMovements() {
+function generateLinearMouseMovements(endMovementX) {
     let movements = [];
     const startX = randNum(450, 550, true);
-    const endX = 600; // End position on the X axis
-    let currentY = randNum(400, 450, true); // Random starting Y position
-    const endY = randNum(400, 500); // Y stabilizes between 400 and 500
-    const steps = randNum(50, 70, true); // Total number of steps
-    const yMoveStep = Math.floor(Math.random() * (steps / 2)); // Step at which Y movement occurs
+    const endX = startX + endMovementX; 
+    let currentY = randNum(400, 450, true); 
+    const endY = randNum(400, 500);
+    const steps = randNum(50, 70, true); 
+    const yMoveStep = Math.floor(Math.random() * (steps / 2)); 
 
     let currentTime = randNum(3500, 4000, true);
     let lastTimeStamp = currentTime;
 
     for (let i = 0; i < steps; i++) {
         if (i === yMoveStep) {
-            currentY = endY; // Y movement happens once
-        } else if (i !== 0) { // Add random variation to Y at each step, except the first
-            currentY += randNum(-5, 5, true); // Randomly adjust Y position
+            currentY = endY; 
+        } else if (i !== 0) { 
+            currentY += randNum(-5, 5, true);
         }
 
-        let timeStamp = lastTimeStamp + randNum(5, 20, false); // Ensure timestamp always increases
+        let timeStamp = lastTimeStamp + randNum(5, 20, false); 
         movements.push({
             x: Math.round(startX + (endX - startX) / steps * i),
             y: Math.round(currentY),
             ts: timeStamp
         });
-        lastTimeStamp = timeStamp; // Update the last timestamp
+        lastTimeStamp = timeStamp; 
     }
 
     return movements;
@@ -212,9 +212,9 @@ computeHash = function (n) {
 
 
 
-function getMovements() {
+function getMovements(endMovementX) {
 
-    var coordsList = generateLinearMouseMovements();
+    var coordsList = generateLinearMouseMovements(endMovementX);
 
     console.log(coordsList)
 
