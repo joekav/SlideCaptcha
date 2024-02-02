@@ -8,7 +8,7 @@ This section of the repository focuses on determining the x,y position of the pu
 `pip install -r requirements.txt`
 
 
-## Running detector
+## Running API
 
 Run `python api.py`
 
