@@ -2,27 +2,26 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const generatePayload = require('./src/gen.js');
-const fs = require('fs');
 
 app.use(express.json());
 
 app.post('/solve', async (req, res) => {
+    // Validate request body
     if (!req.body) {
         res.status(400).send({
             error: "Invalid request body: no body provided"
-        });
-        return;
-
+        })
+        return
     } else if (!req.body.ddm.hash || !req.body.ddm.ua || !req.body.ddm.cid) {
         res.status(400).send({
             error: "Invalid request body: invalid ddm"
-        });
-        return;
+        })
+        return
     } else if (!req.body.background_image) {
         res.status(400).send({
             error: "Invalid request body: no image url"
-        });
-        return;
+        })
+        return
     }
 
     var response = await generatePayload.main(req.body)
