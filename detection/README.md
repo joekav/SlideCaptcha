@@ -46,7 +46,7 @@ Returns:
 
 `position` is the x and y coordinates of the left side of the puzzle piece.
 
-This value is then used in the [payload generator](https://google.com).
+This value is then used in the [payload generator](https://github.com/joekav/SlideCaptcha/tree/main/api).
 
 
 
