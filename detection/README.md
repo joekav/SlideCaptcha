@@ -12,7 +12,9 @@ This section of the repository focuses on determining the x,y position of the pu
 
 Run `python api.py`
 
-This will start the flask API on port 3030
+This will start the flask API on port 3030.
+
+
 
 
 ## API Usage
