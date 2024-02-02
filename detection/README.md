@@ -31,6 +31,7 @@ Request body:
 ```
 
 `background_image` which should be the url to the background image provided by datadome.
+
 `debug` (optional) which is a boolean to write an image of the found position surrounded by a box.
 
 Returns:
