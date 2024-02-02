@@ -49,3 +49,32 @@ Example response body:
 1. `payload` is the encoded payload produced by all information sent to the API
 2. `captchaChallenge` is a challenge in the html page which is based on the user agent and languages.
 
+
+## Submitting the results
+
+Submitting the resulting payload and captchaChallenge values are quite simple. Datadome have a /catpcha/check endpoint, and the values are used as query parameters in a GET request.
+
+![submit](https://github.com/joekav/SlideCaptcha/blob/main/images/submit.png?raw=true)
+
+Our payload goes into the `ddCaptchaEncodedPayload` parameter, and the captchaChallenge goes into the `captchaChallenge` parameter.
+
+
+The other values can be scraped from the `/captcha` url.
+
+![challengeVals](https://github.com/joekav/SlideCaptcha/blob/main/images/challengeVals.png?raw=true)
+![submitParams](https://github.com/joekav/SlideCaptcha/blob/main/images/submitParams.png?raw=true)
+![ddm](https://github.com/joekav/SlideCaptcha/blob/main/images/ddm.png?raw=true)
+
+
+## Response from Datadome
+
+With a valid request and payload, Datadome respond with a json object holding a cookie, like this.
+```
+{
+    "cookie":"datadome=s6O74n3eWq5ccdD_y8QpYjTOVy...; Max-Age=31536000; Domain=.footlocker.co.uk; Path=/; Secure; SameSite=None"
+}
+```
+
+This cookie can then be injected into your session, and you can retry the request you were attempting before the block. If Datadome deem your payload's contents to be human-like, you will not get another block. If they don't, you will receive another captcha.
+
+The response will be a 403 if the format of your request is invalid. This could be anything, like invalid signals encoding, invalid cid, invalid url encoding of the `/check` request URL
