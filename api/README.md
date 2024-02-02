@@ -6,7 +6,7 @@ This API uses the [piece detection API](https://github.com/joekav/SlideCaptcha/t
 
 The signals are the way Datadome collect and encode all data collected in the script. These signals are encoded every time a new one is added using XOR ciphers and byte shifting. Throught the script, the function call `n.addSignal`, with n being the signals class. The `n.buildPayload()` call is used when everything has been collected, which triggers the GET request to their `/check` endpoint for validation.
 
-## Submitting piece position
+## Submitting position
 
 Using our position recieved from the python API, we submit this in the signal value `xUser`. This value is the final x position triggered in the `mousemove` events. Our API returns the coordinate of the very left side of the puzzle piece, which I have found is the way it is calculated in the JS. Along with the position, our mouse events must also line up with it, so we use an ending x value of the position + a random integer between 15 and 30, as the `m_crdR` value is how far the mouse movements went to the right in total, and we are mimicking going too far, then coming back.
 
