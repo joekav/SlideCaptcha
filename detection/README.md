@@ -1,36 +1,55 @@
-# Slide Captcha Deobfuscation
+# Puzzle Detection
 
-This section of the repository focuses on the deobfuscation of the slide captcha javascript provided by Datadome. Although it isn't the cleanest deobfuscation I was focussing on maintaining the logic of the script, enabling you to put it into your own html page and run the script. This allowed me to gather the signals to give me a better understanding of the data the script collects, and how they encode the signals when they are sent for valdiation to Datadomes servers.
+This section of the repository focuses on determining the x,y position of the puzzle piece inside the background image. 
 
 
 ## Installing dependencies
 
-If you are using npm, run the following command:
-
-``npm install``
+`pip install -r requirements.txt`
 
 
-## Running the deobfuscator
+## Running detector
 
-Insert the captcha script found on the Datadome captcha block page to `/assets/in.js`.
+Run `python api.py`
 
-Then, simply run 
-
-```npm start```
+This will start the flask API on port 3030
 
 
-## Output
+## API Usage
 
-The output can be found inside the `assets` folder, where you will find 5 output files, which include a new file after each transformation has been run, and the final file `out_final.js`
+There is only one endpoint, which is `/solve` with a method of `POST`.
 
-`out_hex.js` is the first transformation, which is written after all hexadecimal strings are converted to their normal string values.
+Request body:
 
-`out_string_decode.js` is the second transformation, which evaluates function calls like this `window[ln(nn(A(7, 14), f(127, 73)))][ln(k(x(137, 82), M(6, 8)))]` to this `window["_hsv"]["length"]`
+```
+{
+    "background_image": "https://dd.prod.captcha-delivery.com/image/2024-01-28/9ddaf44e46e88d029428151370891a5c.jpg",
+    "debug": true
+}
+```
 
-`out_binary_expressions.js` is the third transformation, which takes long binary expressions like this `window["d" + "d" + "R" + "e" + "s" + "O" + "b" + "j"]["o" + "v" + "h" + "t"]` to this `window["ddResObj]["ovht"]`
+`background_image` which should be the url to the background image provided by datadome.
+`debug` (optional) which is a boolean to write an image of the found position surrounded by a box.
 
-`out_bracket_dot.js` is the fourth and final transformation, which converts all member expressions using bracket notation like this `document[["querySelector"]](".sliderContainer")` to this `document.querySelector(".sliderContainer")` with dot notation instead.
+Returns:
+
+```
+{
+    "position": [
+        190,
+        18
+    ]
+}
+```
+
+`position` is the x and y coordinates of the left side of the puzzle piece.
+
+This value is then used in the [payload generator](https://google.com).
 
 
-## Difference in readability
 
+## Debug images
+
+The debug images found if `debug` is true look like this.
+
+![debug](https://github.com/joekav/SlideCaptcha/blob/main/images/debug.png?raw=true)
