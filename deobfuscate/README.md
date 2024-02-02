@@ -32,3 +32,8 @@ The output can be found inside the `assets` folder, where you will find 5 output
 
 `out_bracket_dot.js` is the fourth and final transformation, which converts all member expressions using bracket notation like this `document[["querySelector"]](".sliderContainer")` to this `document.querySelector(".sliderContainer")` with dot notation instead.
 
+
+## Difference
+
+
+
