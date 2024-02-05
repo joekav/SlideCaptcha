@@ -1,6 +1,8 @@
 # SlideCaptcha
 
 A repository with the objective of understanding and reversing exactly how Datadome's slide captcha works.
+![example](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/example.png?raw=true)
+
 
 ## Table of contents
 1. [Deobfuscator](https://github.com/joekav/SlideCaptcha/tree/main/deobfuscate)
@@ -9,7 +11,6 @@ A repository with the objective of understanding and reversing exactly how Datad
 
 ## What is a slide captcha?
 
-![example](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/example.png?raw=true)
 
 A slide captcha is a method of detecting bots and web scrapers used by Datadome and Geetest. They work by making the user slide a puzzle piece along a background image into the correct position shown by a darker location.
 
@@ -25,7 +26,7 @@ First, we need to deobfuscate the script, to take it from a completely unreadabl
 
 ## How does the script run?
 
-[!module](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/module.png?raw=true)
+![module](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/module.png?raw=true)
 
 At execution the script begins with a custom module loader, which has a similar function as `require` does in Node.js. This is used throughout the script to access different modules. There is 8 modules inside of the script:
 
