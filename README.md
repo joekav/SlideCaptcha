@@ -1,7 +1,5 @@
 # SlideCaptcha
 
-![example](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/example.png?raw=true)
-
 A repository with the objective of understanding and reversing exactly how Datadome's slide captcha works. This code should not be used in production, it is more of a PoC.
 
 This repository is intended solely for educational purposes. Please use this information responsibly and ethically. Any misuse or unauthorized use of this knowledge is strongly discouraged.
