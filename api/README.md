@@ -29,7 +29,7 @@ Example request body:
 ```
 
 1. `background_image` is the image url found in the Datadome captcha block page.
-2. `debug` is a boolean which determines whether to write a debug image like [this one](https://github.com/joekav/SlideCaptcha/blob/main/images/debug.jpg).
+2. `debug` is a boolean which determines whether to write a debug image like [this one](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/debug.jpg).
 3. `ddm` is a json object of data found in the Datadome captcha block page.
    1. `hash` is a value which differs on each site Datadome uses the captcha on.
    2. `ua` is the user agent used in the session we are attempting to solve.
@@ -54,16 +54,16 @@ Example response body:
 
 Submitting the resulting payload and captchaChallenge values are quite simple. Datadome have a /catpcha/check endpoint, and the values are used as query parameters in a GET request.
 
-![submit](https://github.com/joekav/SlideCaptcha/blob/main/images/submit.png?raw=true)
+![submit](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/submit.png?raw=true)
 
 Our payload goes into the `ddCaptchaEncodedPayload` parameter, and the captchaChallenge goes into the `captchaChallenge` parameter.
 
 
 The other values can be scraped from the `/captcha` url.
 
-![challengeVals](https://github.com/joekav/SlideCaptcha/blob/main/images/challengeVals.png?raw=true)
-![submitParams](https://github.com/joekav/SlideCaptcha/blob/main/images/submitParams.png?raw=true)
-![ddm](https://github.com/joekav/SlideCaptcha/blob/main/images/ddm.png?raw=true)
+![challengeVals](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/challengeVals.png?raw=true)
+![submitParams](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/submitParams.png?raw=true)
+![ddm](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/ddm.png?raw=true)
 
 
 ## Response from Datadome

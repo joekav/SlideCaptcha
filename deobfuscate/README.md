@@ -38,9 +38,9 @@ The output can be found inside the `assets` folder, where you will find 5 output
 
 Before any transformations
 
-![before](https://github.com/joekav/SlideCaptcha/blob/main/images/before.png?raw=true)
+![before](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/before.png?raw=true)
 
 
 After all transformations
 
-![before](https://github.com/joekav/SlideCaptcha/blob/main/images/after.png?raw=true)
+![before](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/after.png?raw=true)

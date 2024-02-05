@@ -55,4 +55,4 @@ This value is then used in the [payload generator](https://github.com/joekav/Sli
 
 The debug images found if `debug` is true look like this.
 
-![debug](https://github.com/joekav/SlideCaptcha/blob/main/images/debug.jpg?raw=true)
+![debug](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/debug.jpg?raw=true)
