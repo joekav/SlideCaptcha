@@ -1,4 +1,3 @@
-/** DataDome is a cybersecurity solution to detect bot activity https://datadome.co v1.8.2 e12fc8a */
 !function n(t, e, i) {
   function a(r, c) {
     if (!e[r]) {
