@@ -21,7 +21,6 @@ This repository is intended solely for educational purposes. Please use this inf
       - [Events](#events)
       - [Canvas fingerprints](#canvas-fingerprints)
     - [Timestamps](#timestamps)
-- [Usage](#usage)
 
 # Introduction
 
@@ -87,10 +86,3 @@ Canvas fingerprinting is a technique used by numerous antibot companies, and it 
 
 ### Timestamps
 Timestamps are used frequently during the script, as Datadome will try and fingerprint these sessions by comparing our fake timestamps with those that are real. I have found it sufficient to randomly generate these timestamps within ranges of those found in real browsers.
-
-
-# Usage
-
-
-To use this payload generator, we need to run both the detection API and the generator API, as the detection API is used in the payload generating process.
-
