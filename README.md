@@ -19,7 +19,7 @@ This repository is intended solely for educational purposes. Please use this inf
     - [Signals](#signals)
       - [Events](#events)
       - [Canvas fingerprints](#canvas-fingerprints)
-    - [Timestamps](#timestamps)
+      - [Timestamps](#timestamps)
 
 # Introduction
 
@@ -85,5 +85,5 @@ Events are a bit different from the other values we will use, as we cannot hard 
 #### Canvas fingerprints
 Canvas fingerprinting is a technique used by numerous antibot companies, and it involves shapes being drawn in the html canvas. Each browser will render the canvas in a slightly different way than other browsers, so they most likely use it as a benchmark against the other signals being submitted. I found that we can hardcode these as long as the other signals match up with the device the canvas fingerprint was collected from
 
-### Timestamps
+#### Timestamps
 Timestamps are used frequently during the script, as Datadome will try and fingerprint these sessions by comparing our fake timestamps with those that are real. I have found it sufficient to randomly generate these timestamps within ranges of those found in real browsers.
