@@ -66,7 +66,6 @@ With our now deobfuscated version of the script, we can begin to determine how t
 
 The main feature of the slide captcha is having the puzzle piece in the correct position. This is the first benchmark in determining whether the user is a human or a bot. To do this, we can use python's cv2 library to perform template matching. I found this approach to be 88-90% accurate, which isn't ideal, but considering it takes on average 0.02 seconds per detection, I believe where we sacrifice in accuracy we gain in speed and efficiency.
 
-
 This process can be found [here](https://github.com/joekav/SlideCaptcha/tree/main/detection).
 
 ## Generating our payload
@@ -78,8 +77,10 @@ This process can be found [here](https://github.com/joekav/SlideCaptcha/tree/mai
 ### Signals
 First, we can begin to add our own hardcoded values which we have collected from our own browser. Values such as screen sizes, user agents, device and device memory can all just be thrown straight into our payloads, as they are very generic and hard to fingerprint, as millions of devices will have similar values.
 
+![signals](https://github.com/joekav/SlideCaptcha/tree/main/.github/images/addSignals.png?raw=true)
+
 #### Events
-Events are a bit different from the other values we will use, as we cannot hard code these since Datadome deem these an important piece of our fingerprint. I went with mouse events, as they seemed the easiest to replicate. Datadome collect the x and y pixels of the cursor, along with the timestamps at which each movement happens. I wrote a basic function to emulate these events, which focus on the cursor moving from a starting x value, to an x value determined by the location of the puzzle piece, as the mouse events stop recording upon a `mouseup` event. These coordinates and timestamps are then used to calculate many different values included in the signals. A standard deviation of both the x and y values and an average speed of x and y are two of them.
+Events are a bit different from the other values we will use, as we cannot hard code these since Datadome deem these an important piece of our fingerprint. I went with mouse events, as they seemed the easiest to replicate. Datadome collect the x and y pixels of the cursor, along with the timestamps at which each movement happens. I wrote a [basic function](https://github.com/joekav/SlideCaptcha/tree/main/api/src/mouse.js) to emulate these events, which focus on the cursor moving from a starting x value, to an x value determined by the location of the puzzle piece, as the mouse events stop recording upon a `mouseup` event. These coordinates and timestamps are then used to calculate many different values included in the signals. A standard deviation of both the x and y values and an average speed of x and y are two of them.
 
 
 #### Canvas fingerprints

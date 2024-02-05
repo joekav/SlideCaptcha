@@ -49,14 +49,14 @@ async function generatePayload(body) {
     var signals = new signalsClass();
     signals.addSignal("v", "1.8.2");
     signals.addSignal("h", "97946689b033b3727194dd2bffeb337ba15cd6fba2ab5775e8b5e6d255da6074");
-    signals.addSignal("tstf", 16); // navigator.hardwareConcurrency * 2
-    signals.addSignal("tagpu", randomFloatString(10, 16)); // hn is earlier performance.now() // performance.now() - hn
+    signals.addSignal("tstf", 16); 
+    signals.addSignal("tagpu", randomFloatString(10, 16)); 
     signals.addSignal("ccsT", "Error\nat a (<anonymous>:317:28)\nat <anonymous>:939:34\nat <anonymous>:1165:34\nat p.exports (<anonymous>:958:19)\nat g.sendPayload (<anonymous>:1499:25)\n");
     signals.addSignal("ccsB", "t/static/chunks/4114.d5b644d4ccc9b88c.js:11:7944)\nat n.args.<computed> (https://cdn.oaistatic.com/_next/static/chunks/4114.d5b644d4ccc9b88c.js:59:153)");
-    signals.addSignal("ccsH", 2520352591); // defined, never changed
-    signals.addSignal("ccsV", "a709286857318dc6587a0bd877c6010672ad8b5a8eae3d6b29e3c055f629cdf3"); // no idea
-    signals.addSignal("cssS", "1.36,2.78,8.63,14.96,3.02,4.56,10.73,4.15,2.79"); // no idea
-    signals.addSignal("css0", "32, 108, 5"); // no idea
+    signals.addSignal("ccsH", 2520352591); 
+    signals.addSignal("ccsV", "a709286857318dc6587a0bd877c6010672ad8b5a8eae3d6b29e3c055f629cdf3"); 
+    signals.addSignal("cssS", "1.36,2.78,8.63,14.96,3.02,4.56,10.73,4.15,2.79"); 
+    signals.addSignal("css0", "32, 108, 5"); 
     signals.addSignal("css1", "14.9216, 1.02084, -0.3228, 0.0300839, -0.149609, 0.793364, -4.4068, 0.410699, -0.173615, 2.90683, 1.16728, -0.108786, -1.86288, 31.1903, 12.5249, -0.167277"); // no idea
     signals.addSignal("cssH", "0px");
     signals.addSignal("plgod", false);
