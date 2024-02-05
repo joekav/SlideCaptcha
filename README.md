@@ -9,7 +9,7 @@ A repository with the objective of understanding and reversing exactly how Datad
 
 ## What is a slide captcha?
 
-![example](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/debug.jpg?raw=true)
+![example](https://github.com/joekav/SlideCaptcha/blob/main/.github/images/example.png?raw=true)
 
 A slide captcha is a method of detecting bots and web scrapers used by Datadome and Geetest. They work by making the user slide a puzzle piece along a background image into the correct position shown by a darker location.
 
