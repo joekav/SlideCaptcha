@@ -5,9 +5,7 @@ const traverse = require('@babel/traverse').default;
 function traverseHexStrings(ast) {
     traverse(ast, {
         StringLiteral(path) {
-            if (path.node.extra.raw !== path.node.value) {
-                path.node.extra = undefined;
-            }
+            delete path.node.extra;
         }
     });
 }
