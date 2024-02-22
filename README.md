@@ -56,7 +56,7 @@ With our now deobfuscated version of the script, we can begin to determine how t
 2. `./bean` - This module seems to be in charge of all event recording (mouse, keyboard, touch).
 3. `./es5_code/obf` - This module starts the collection of device data.
 4. `./hash` - This module contains a function used to hash different values during runtime.
-5. `./helpers` - This moudle just contains a function used for safe base64 encoding.
+5. `./helpers` - This module just contains a function used for safe base64 encoding.
 6. `initial` - This is the first module to run, definition of the signals class, a checksum of different functions within the script.
 7. `./picasso` - This module is in charge of canvas fingerprinting.
 8. `./slidercaptcha` - This module loads all of the images used during the captcha into the DOM - the background image and the puzzle fragment.
