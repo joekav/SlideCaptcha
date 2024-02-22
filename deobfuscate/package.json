@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --stack-size=3936 index.js"
   },
   "dependencies": {
     "@babel/core": "^7.23.7",
